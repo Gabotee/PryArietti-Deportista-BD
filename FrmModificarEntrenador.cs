@@ -71,11 +71,18 @@ namespace PryArietti_Deportista_BD
         private void cmdGuardar_Click(object sender, EventArgs e)
         {
             string CodigoDeportista = txtCodigo.Text;
+            
+            //crear Objeto de la clase Deportista 
             ClaseCliente Entrenador = new ClaseCliente();
-            Entrenador.Modificar(CodigoDeportista);
+
+            // le pasa la informacion escrita en los txt a la clase 
             Entrenador.Direccion = txtDireccion.Text;
             Entrenador.Provincia = txtProvincia.Text;
             Entrenador.Deporte = lstDeporte.Text;
+
+            // Pasa el codigo que se debe modificar... 
+            Entrenador.ModificarEntrenador(CodigoDeportista);
+
             MessageBox.Show("Datos Modificados");
 
         }

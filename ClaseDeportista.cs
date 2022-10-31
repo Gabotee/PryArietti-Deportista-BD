@@ -148,11 +148,12 @@ namespace PryArietti_Deportista_BD
 
         }
 
-        public void Modificar (string CodigoDeportista)
+        public void ModificarEntrenador (string CodigoDeportista)
         {
             try
             {
-                string ModificarEntrenador = "UPDATE ENTRENADORES SET ([DIRECCION],[PROVINCIA],[DEPORTE] WHERE [CODIGO DEPORTISTA] = " + CodigoDeportista;
+                // Poner comillas simples.. (Por eso no funcionaba)
+                string ModificarEntrenador = "UPDATE ENTRENADORES SET [DIRECCION] = '" + Direccion + "',[PROVINCIA] ='"+ Provincia  + "',[DEPORTE] ='"+ Deporte +"' WHERE [CODIGO DEPORTISTA] = '" + CodigoDeportista +"'";
                 //Conectarse a la base de datos
                 ConexionBD.ConnectionString = RutaBaseDeDatos;
                 ConexionBD.Open();
