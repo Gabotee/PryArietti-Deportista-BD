@@ -20,8 +20,8 @@ namespace PryArietti_Deportista_BD
         private void cmdBuscar_Click(object sender, EventArgs e)
         {
             ClaseCliente Deportista = new ClaseCliente();
-            Deportista.Buscar(txtCodigoEntrenador.Text);
-            if (Deportista.CodigoDeportista != txtCodigoEntrenador.Text)
+            Deportista.Buscar(txtCodigo.Text);
+            if (Deportista.CodigoDeportista != txtCodigo.Text)
             {
                 MessageBox.Show("Codigo No encontrado");
             }
@@ -50,10 +50,12 @@ namespace PryArietti_Deportista_BD
                 SsModificarEntrenador.BackColor = Color.Red;
             }
         }
+
+
         private void Limpiar()
         {
             //Limpia el todos los controladores
-            txtCodigoEntrenador.Text = "";
+            txtCodigo.Text = "";
             txtNombre.Text = "";
             txtApellido.Text = "";
             txtDireccion.Text = "";
@@ -64,6 +66,18 @@ namespace PryArietti_Deportista_BD
         private void cmdLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
+        }
+
+        private void cmdGuardar_Click(object sender, EventArgs e)
+        {
+            string CodigoDeportista = txtCodigo.Text;
+            ClaseCliente Entrenador = new ClaseCliente();
+            Entrenador.Modificar(CodigoDeportista);
+            Entrenador.Direccion = txtDireccion.Text;
+            Entrenador.Provincia = txtProvincia.Text;
+            Entrenador.Deporte = lstDeporte.Text;
+            MessageBox.Show("Datos Modificados");
+
         }
     }
 }

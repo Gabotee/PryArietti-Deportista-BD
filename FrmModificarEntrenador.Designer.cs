@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblCodigoEntrenador = new System.Windows.Forms.Label();
-            this.txtCodigoEntrenador = new System.Windows.Forms.TextBox();
+            this.lblCodigo = new System.Windows.Forms.Label();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.cmdBuscar = new System.Windows.Forms.Button();
             this.mrcDatos = new System.Windows.Forms.GroupBox();
             this.lstDeporte = new System.Windows.Forms.ComboBox();
@@ -43,27 +43,26 @@
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.cmdLimpiar = new System.Windows.Forms.Button();
-            this.cmdModificar = new System.Windows.Forms.Button();
             this.cmdGuardar = new System.Windows.Forms.Button();
             this.SsModificarEntrenador = new System.Windows.Forms.StatusStrip();
             this.mrcDatos.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblCodigoEntrenador
+            // lblCodigo
             // 
-            this.lblCodigoEntrenador.AutoSize = true;
-            this.lblCodigoEntrenador.Location = new System.Drawing.Point(24, 21);
-            this.lblCodigoEntrenador.Name = "lblCodigoEntrenador";
-            this.lblCodigoEntrenador.Size = new System.Drawing.Size(98, 13);
-            this.lblCodigoEntrenador.TabIndex = 0;
-            this.lblCodigoEntrenador.Text = "Codigo Entrenador ";
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Location = new System.Drawing.Point(24, 21);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(99, 13);
+            this.lblCodigo.TabIndex = 0;
+            this.lblCodigo.Text = "Ingrese un Codigo  ";
             // 
-            // txtCodigoEntrenador
+            // txtCodigo
             // 
-            this.txtCodigoEntrenador.Location = new System.Drawing.Point(139, 21);
-            this.txtCodigoEntrenador.Name = "txtCodigoEntrenador";
-            this.txtCodigoEntrenador.Size = new System.Drawing.Size(100, 20);
-            this.txtCodigoEntrenador.TabIndex = 1;
+            this.txtCodigo.Location = new System.Drawing.Point(139, 21);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
+            this.txtCodigo.TabIndex = 1;
             // 
             // cmdBuscar
             // 
@@ -185,15 +184,6 @@
             this.cmdLimpiar.UseVisualStyleBackColor = true;
             this.cmdLimpiar.Click += new System.EventHandler(this.cmdLimpiar_Click);
             // 
-            // cmdModificar
-            // 
-            this.cmdModificar.Location = new System.Drawing.Point(114, 300);
-            this.cmdModificar.Name = "cmdModificar";
-            this.cmdModificar.Size = new System.Drawing.Size(75, 23);
-            this.cmdModificar.TabIndex = 13;
-            this.cmdModificar.Text = "Modificar";
-            this.cmdModificar.UseVisualStyleBackColor = true;
-            // 
             // cmdGuardar
             // 
             this.cmdGuardar.Location = new System.Drawing.Point(195, 300);
@@ -202,6 +192,7 @@
             this.cmdGuardar.TabIndex = 14;
             this.cmdGuardar.Text = "Guardar";
             this.cmdGuardar.UseVisualStyleBackColor = true;
+            this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
             // 
             // SsModificarEntrenador
             // 
@@ -218,12 +209,11 @@
             this.ClientSize = new System.Drawing.Size(327, 353);
             this.Controls.Add(this.SsModificarEntrenador);
             this.Controls.Add(this.cmdGuardar);
-            this.Controls.Add(this.cmdModificar);
             this.Controls.Add(this.cmdLimpiar);
             this.Controls.Add(this.mrcDatos);
             this.Controls.Add(this.cmdBuscar);
-            this.Controls.Add(this.txtCodigoEntrenador);
-            this.Controls.Add(this.lblCodigoEntrenador);
+            this.Controls.Add(this.txtCodigo);
+            this.Controls.Add(this.lblCodigo);
             this.Name = "FrmModificarEntrenador";
             this.Text = "Modificar Entrenador";
             this.Load += new System.EventHandler(this.FrmModificarEntrenador_Load);
@@ -236,8 +226,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblCodigoEntrenador;
-        private System.Windows.Forms.TextBox txtCodigoEntrenador;
+        private System.Windows.Forms.Label lblCodigo;
+        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Button cmdBuscar;
         private System.Windows.Forms.GroupBox mrcDatos;
         private System.Windows.Forms.ComboBox lstDeporte;
@@ -251,7 +241,6 @@
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.Button cmdLimpiar;
-        private System.Windows.Forms.Button cmdModificar;
         private System.Windows.Forms.Button cmdGuardar;
         private System.Windows.Forms.StatusStrip SsModificarEntrenador;
     }
