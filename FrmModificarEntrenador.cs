@@ -19,19 +19,20 @@ namespace PryArietti_Deportista_BD
 
         private void cmdBuscar_Click(object sender, EventArgs e)
         {
-            ClaseCliente Deportista = new ClaseCliente();
-            Deportista.Buscar(txtCodigo.Text);
-            if (Deportista.CodigoDeportista != txtCodigo.Text)
+            ClaseEntrenador Entrenador = new ClaseEntrenador();
+
+            Entrenador.BuscarEntrenador(txtCodigo.Text);
+            if (Entrenador.CodigoDeportista != txtCodigo.Text)
             {
                 MessageBox.Show("Codigo No encontrado");
             }
             else
             {
-                txtNombre.Text = Deportista.Nombre;
-                txtApellido.Text = Deportista.Apellido;
-                txtDireccion.Text = Deportista.Direccion;
-                lstDeporte.Text = Deportista.Deporte;
-                txtProvincia.Text = Deportista.Provincia;
+                txtNombre.Text = Entrenador.Nombre;
+                txtApellido.Text = Entrenador.Apellido;
+                txtDireccion.Text = Entrenador.Direccion;
+                lstDeporte.Text = Entrenador.Deporte;
+                txtProvincia.Text = Entrenador.Provincia;
             }
             
 
@@ -44,7 +45,7 @@ namespace PryArietti_Deportista_BD
                 //Color Verde = Base de datos Conectada
                 SsModificarEntrenador.BackColor = Color.Green;
             }
-            catch (Exception Indicador)
+            catch (Exception )
             {
                 //Color Rojo = No se conecto a la base de datos
                 SsModificarEntrenador.BackColor = Color.Red;
@@ -71,11 +72,13 @@ namespace PryArietti_Deportista_BD
         private void cmdGuardar_Click(object sender, EventArgs e)
         {
             string CodigoDeportista = txtCodigo.Text;
-            
+
             //crear Objeto de la clase Deportista 
-            ClaseCliente Entrenador = new ClaseCliente();
+            ClaseEntrenador Entrenador = new ClaseEntrenador();
 
             // le pasa la informacion escrita en los txt a la clase 
+            Entrenador.Nombre = txtNombre.Text;
+            Entrenador.Apellido = txtApellido.Text;
             Entrenador.Direccion = txtDireccion.Text;
             Entrenador.Provincia = txtProvincia.Text;
             Entrenador.Deporte = lstDeporte.Text;

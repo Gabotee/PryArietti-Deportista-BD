@@ -7,7 +7,7 @@ using System.Data.OleDb;
 
 namespace PryArietti_Deportista_BD
 {
-    internal class ClaseCliente
+    internal class ClaseEntrenador
     {
         //Conexion Base de datos
         OleDbConnection ConexionBD = new OleDbConnection();
@@ -19,16 +19,17 @@ namespace PryArietti_Deportista_BD
         //Variable q almacena el proveedor + la ruta de la base de datos
         public string RutaBaseDeDatos = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + "DEPORTE.accdb";
 
-        //Contiene la tablas q voy a usar (Tambien se le puede poner el nombre de las tablas directamente)
+        //Almacenan las tablas q voy a usar (Tambien se le puede poner el nombre de las tablas directamente)
+        private string TablaEntrenador = "Entrenadores";
         
-        private string TablaDeportista = "DEPORTISTA";
 
-        
+
         private string CodigoDep;
         private string Nom;
         private string Ape;
         private string Dir;
         private string Dep;
+        private string Prov;
         private string tel;
         private string Ed;
 
@@ -48,7 +49,7 @@ namespace PryArietti_Deportista_BD
         }
         public string Apellido
         {
-            get { return Ape; } 
+            get { return Ape; }
             set { Ape = value; }
         }
         public string Direccion
@@ -56,25 +57,19 @@ namespace PryArietti_Deportista_BD
             get { return Dir; }
             set { Dir = value; }
         }
-        
-        public string Telefono
-        {
-            get { return tel;}
-            set { tel = value; }
-        }
-        public string Edad
-        {
-            get { return Ed; }
-            set { Ed = value; }
-        }
         public string Deporte
         {
             get { return Dep; }
             set { Dep = value; }
         }
+        public string Provincia
+        {
+            get { return Prov; }
+            set { Prov = value; }
+        }
 
 
-        public void BuscarDeportista (string CodigoDeportista)
+        public void BuscarEntrenador(string CodigoDeportista)
         {
             try
             {
@@ -82,7 +77,7 @@ namespace PryArietti_Deportista_BD
                 ConexionBD.Open();
                 QueQuieroDeLaBase.Connection = ConexionBD;
                 QueQuieroDeLaBase.CommandType = System.Data.CommandType.TableDirect;
-                QueQuieroDeLaBase.CommandText = TablaDeportista;
+                QueQuieroDeLaBase.CommandText = TablaEntrenador;
                 OleDbDataReader Leer = QueQuieroDeLaBase.ExecuteReader();
 
                 if (Leer.HasRows)
@@ -94,62 +89,28 @@ namespace PryArietti_Deportista_BD
                             CodigoDep = Leer.GetString(0);
                             Nom = Leer.GetString(1);
                             Ape = Leer.GetString(2);
-                            Dir = Leer.GetString(3);
-                            tel = Leer.GetString(4);
-                            Ed = Leer.GetString(5);
-                            Dep = Leer.GetString(6);
+                            Dir = Leer.GetString(3);                       
+                            Prov = Leer.GetString(4);
+                            Dep = Leer.GetString(5);
                         }
                     }
                 }
-
                 ConexionBD.Close();
             }
             catch (Exception)
             {
-                
+
                // throw;
             }
 
         }
 
-        public void Agregar()
-        {
-            try
-            {
-                String AgregarDeportista = "INSERT INTO" + " DEPORTISTA ([CODIGO DEPORTISTA], [NOMBRE], [APELLIDO], [DIRECCION],[TELEFONO],[EDAD], [DEPORTE])" +
-                        " VALUES ('" + CodigoDeportista + "','" + Nombre + "','" + Apellido + "','" + Direccion + "','" + Telefono + "','" + Edad + "','" + Deporte + "')";
-
-                //Conectarse a la base de datos
-                ConexionBD.ConnectionString = RutaBaseDeDatos;
-                ConexionBD.Open();
-
-                // toma la conexion
-                QueQuieroDeLaBase.Connection = ConexionBD;
-
-                // me trae la tabla del acces 
-                QueQuieroDeLaBase.CommandType = System.Data.CommandType.Text;
-                //Selecciona la tabla 
-                QueQuieroDeLaBase.CommandText = AgregarDeportista;
-                QueQuieroDeLaBase.ExecuteNonQuery();
-
-                ConexionBD.Close();
-            }
-            catch (Exception )
-            {
-                
-                //throw;
-            }
-
-
-        }
-
-
-        public void ModificarDeportista (string CodigoDeportista)
+        public void ModificarEntrenador(string CodigoDeportista)
         {
             try
             {
                 // Poner comillas simples.. (Por eso no funcionaba)
-                string ModificarDeportista = "UPDATE DEPORTISTA SET [DIRECCION] = '" + Direccion + "',[TELEFONO] ='" + Telefono + "',[EDAD] ='" + Edad + "',[DEPORTE] ='" + Deporte + "' WHERE [CODIGO DEPORTISTA] = '" + CodigoDeportista + "'";
+                string ModificarEntrenador = "UPDATE ENTRENADORES SET [DIRECCION] = '" + Direccion + "',[PROVINCIA] ='" + Provincia + "',[DEPORTE] ='" + Deporte + "' WHERE [CODIGO DEPORTISTA] = '" + CodigoDeportista + "'";
                 //Conectarse a la base de datos
                 ConexionBD.ConnectionString = RutaBaseDeDatos;
                 ConexionBD.Open();
@@ -160,17 +121,22 @@ namespace PryArietti_Deportista_BD
                 // me trae la tabla del acces 
                 QueQuieroDeLaBase.CommandType = System.Data.CommandType.Text;
                 //Selecciona la tabla 
-                QueQuieroDeLaBase.CommandText = ModificarDeportista;
-
+                QueQuieroDeLaBase.CommandText = ModificarEntrenador;
+                // Ejecuta el comando 
                 QueQuieroDeLaBase.ExecuteNonQuery();
-
+                //cierra la base de datos
                 ConexionBD.Close();
             }
-            catch (Exception)
+            catch (Exception )
             {
 
                 //throw;
             }
+
+
         }
+
+
+
     }
 }
