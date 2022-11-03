@@ -29,8 +29,8 @@ namespace PryArietti_Deportista_BD
         private string Ape;
         private string Dir;
         private string Dep;
-        private string tel;
-        private string Ed;
+        private int tel;
+        private int Ed;
 
 
         //Get: Retorna lo de las variables
@@ -57,12 +57,12 @@ namespace PryArietti_Deportista_BD
             set { Dir = value; }
         }
         
-        public string Telefono
+        public Int32 Telefono
         {
             get { return tel;}
             set { tel = value; }
         }
-        public string Edad
+        public Int32 Edad
         {
             get { return Ed; }
             set { Ed = value; }
@@ -95,9 +95,9 @@ namespace PryArietti_Deportista_BD
                             Nom = Leer.GetString(1);
                             Ape = Leer.GetString(2);
                             Dir = Leer.GetString(3);
-                            tel = Leer.GetString(4);
-                            Ed = Leer.GetString(5);
-                            Dep = Leer.GetString(6);
+                            tel = Leer.GetInt32(4);
+                            Ed = Leer.GetInt32(5);
+                            Dep = Leer.GetString(6);    
                         }
                     }
                 }

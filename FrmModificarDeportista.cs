@@ -26,7 +26,7 @@ namespace PryArietti_Deportista_BD
 
             Deportista.BuscarDeportista(CodigoDeportista);
 
-            if (Deportista.CodigoDeportista != txtCodigo.Text)
+            if (Deportista.CodigoDeportista != CodigoDeportista)
             {
                 MessageBox.Show("Deportista no encontrado");
             }
@@ -35,9 +35,9 @@ namespace PryArietti_Deportista_BD
                 txtNombre.Text = Deportista.Nombre;
                 txtApellido.Text = Deportista.Apellido;
                 txtDireccion.Text = Deportista.Direccion;
-                txtTelefono.Text = Deportista.Telefono;
-                txtEdad.Text = Deportista.Edad;
-                lstDeporte.Text = Deportista.Deporte;
+                txtTelefono.Text = Convert.ToString(Deportista.Telefono);
+                txtEdad.Text = Convert.ToString(Deportista.Edad);
+                lstDeporte.Text =  Convert.ToString(Deportista.Deporte);
             }
 
             
@@ -69,9 +69,9 @@ namespace PryArietti_Deportista_BD
             Deportista.Nombre = txtNombre.Text;
             Deportista.Apellido = txtApellido.Text;
             Deportista.Direccion = txtDireccion.Text;
-            Deportista.Telefono = txtTelefono.Text;
-            Deportista.Edad = txtEdad.Text;
-            Deportista.Deporte = lstDeporte.Text;
+            Deportista.Telefono = Convert.ToInt32(txtTelefono.Text);
+            Deportista.Edad = Convert.ToInt32(txtEdad.Text);
+            Deportista.Deporte = Convert.ToString(lstDeporte.SelectedItem);
 
             // Pasa el codigo que se debe modificar... 
             Deportista.ModificarDeportista(CodigoDeportista);

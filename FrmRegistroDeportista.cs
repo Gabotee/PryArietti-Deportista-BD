@@ -50,9 +50,9 @@ namespace PryArietti_Deportista_BD
             Registro.Nombre = txtNombre.Text;
             Registro.Apellido = txtApellido.Text;
             Registro.Direccion = txtDireccion.Text;
-            Registro.Edad = Convert.ToString(txtEdad.Text);
-            Registro.Telefono = Convert.ToString(txtTelefono.Text);
-            Registro.Deporte = lstDeporte.Text;
+            Registro.Edad = Convert.ToInt32(txtEdad.Text);
+            Registro.Telefono = Convert.ToInt32(txtTelefono.Text);
+            Registro.Deporte =  Convert.ToString(lstDeporte.SelectedItem);
             Registro.Agregar();
             MessageBox.Show("Los Datos se cargaron correctamente");
             Limpiar();
