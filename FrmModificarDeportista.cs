@@ -20,7 +20,7 @@ namespace PryArietti_Deportista_BD
 
         private void cmdBuscar_Click(object sender, EventArgs e)
         {
-            string CodigoDeportista = txtCodigo.Text;
+            string CodigoDeportista = txtCodigoDeportista.Text;
 
             ClaseCliente Deportista = new ClaseCliente();
 
@@ -35,9 +35,10 @@ namespace PryArietti_Deportista_BD
                 txtNombre.Text = Deportista.Nombre;
                 txtApellido.Text = Deportista.Apellido;
                 txtDireccion.Text = Deportista.Direccion;
-                txtTelefono.Text = Convert.ToString(Deportista.Telefono);
-                txtEdad.Text = Convert.ToString(Deportista.Edad);
-                lstDeporte.Text =  Convert.ToString(Deportista.Deporte);
+
+                txtTelefono.Text = Deportista.Telefono;
+                txtEdad.Text = Deportista.Edad;
+                lstDeporte.SelectedItem = Deportista.Deporte;
             }
 
             
@@ -60,17 +61,18 @@ namespace PryArietti_Deportista_BD
 
         private void cmdGuardar_Click(object sender, EventArgs e)
         {
-            string CodigoDeportista = txtCodigo.Text;
 
             //crear Objeto de la clase Deportista 
             ClaseCliente Deportista = new ClaseCliente();
+
+            string CodigoDeportista = txtCodigoDeportista.Text;
 
             // le pasa la informacion escrita en los txt a la clase 
             Deportista.Nombre = txtNombre.Text;
             Deportista.Apellido = txtApellido.Text;
             Deportista.Direccion = txtDireccion.Text;
-            Deportista.Telefono = Convert.ToInt32(txtTelefono.Text);
-            Deportista.Edad = Convert.ToInt32(txtEdad.Text);
+            Deportista.Telefono = txtTelefono.Text;
+            Deportista.Edad = txtEdad.Text;
             Deportista.Deporte = Convert.ToString(lstDeporte.SelectedItem);
 
             // Pasa el codigo que se debe modificar... 
@@ -78,13 +80,13 @@ namespace PryArietti_Deportista_BD
 
             MessageBox.Show("Datos Modificados");
 
-           
+            Limpiar();
         }
 
         private void Limpiar()
         {
             //Limpia el todos los controladores
-            txtCodigo.Text = "";
+            txtCodigoDeportista.Text = "";
             txtNombre.Text = "";
             txtApellido.Text = "";
             txtDireccion.Text = "";
@@ -96,6 +98,18 @@ namespace PryArietti_Deportista_BD
         private void cmdLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
+        }
+
+        private void cmdModificar_Click(object sender, EventArgs e)
+        {
+            txtNombre.Enabled = true;
+            txtApellido.Enabled = true;
+            txtDireccion.Enabled = true;
+            txtTelefono.Enabled = true;
+            txtEdad.Enabled = true;
+            lstDeporte.Enabled = true;
+
+            txtNombre.Focus();
         }
     }
 }

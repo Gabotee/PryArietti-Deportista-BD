@@ -1,6 +1,6 @@
 ﻿namespace PryArietti_Deportista_BD
 {
-    partial class FrmModificarEntrenador
+    partial class FrmEliminarEntrenador
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblCodigo = new System.Windows.Forms.Label();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.cmdBuscar = new System.Windows.Forms.Button();
+            this.cmdEliminar = new System.Windows.Forms.Button();
+            this.SsElimarEntrenador = new System.Windows.Forms.StatusStrip();
             this.mrcDatos = new System.Windows.Forms.GroupBox();
             this.lstDeporte = new System.Windows.Forms.ComboBox();
             this.txtProvincia = new System.Windows.Forms.TextBox();
@@ -42,37 +41,29 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblDireccion = new System.Windows.Forms.Label();
-            this.cmdGuardar = new System.Windows.Forms.Button();
-            this.SsModificarEntrenador = new System.Windows.Forms.StatusStrip();
-            this.cmdModificar = new System.Windows.Forms.Button();
+            this.cmdBuscar = new System.Windows.Forms.Button();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.lblCodigo = new System.Windows.Forms.Label();
             this.mrcDatos.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblCodigo
+            // cmdEliminar
             // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(24, 21);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(99, 13);
-            this.lblCodigo.TabIndex = 0;
-            this.lblCodigo.Text = "Ingrese un Codigo  ";
+            this.cmdEliminar.Location = new System.Drawing.Point(191, 288);
+            this.cmdEliminar.Name = "cmdEliminar";
+            this.cmdEliminar.Size = new System.Drawing.Size(75, 21);
+            this.cmdEliminar.TabIndex = 27;
+            this.cmdEliminar.Text = "Eliminar";
+            this.cmdEliminar.UseVisualStyleBackColor = true;
+            this.cmdEliminar.Click += new System.EventHandler(this.cmdEliminar_Click);
             // 
-            // txtCodigo
+            // SsElimarEntrenador
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(139, 21);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
-            this.txtCodigo.TabIndex = 1;
-            // 
-            // cmdBuscar
-            // 
-            this.cmdBuscar.Location = new System.Drawing.Point(153, 47);
-            this.cmdBuscar.Name = "cmdBuscar";
-            this.cmdBuscar.Size = new System.Drawing.Size(75, 23);
-            this.cmdBuscar.TabIndex = 2;
-            this.cmdBuscar.Text = "Buscar";
-            this.cmdBuscar.UseVisualStyleBackColor = true;
-            this.cmdBuscar.Click += new System.EventHandler(this.cmdBuscar_Click);
+            this.SsElimarEntrenador.Location = new System.Drawing.Point(0, 318);
+            this.SsElimarEntrenador.Name = "SsElimarEntrenador";
+            this.SsElimarEntrenador.Size = new System.Drawing.Size(297, 22);
+            this.SsElimarEntrenador.TabIndex = 28;
+            this.SsElimarEntrenador.Text = "statusStrip1";
             // 
             // mrcDatos
             // 
@@ -86,10 +77,10 @@
             this.mrcDatos.Controls.Add(this.lblNombre);
             this.mrcDatos.Controls.Add(this.lblApellido);
             this.mrcDatos.Controls.Add(this.lblDireccion);
-            this.mrcDatos.Location = new System.Drawing.Point(28, 86);
+            this.mrcDatos.Location = new System.Drawing.Point(16, 74);
             this.mrcDatos.Name = "mrcDatos";
             this.mrcDatos.Size = new System.Drawing.Size(250, 208);
-            this.mrcDatos.TabIndex = 3;
+            this.mrcDatos.TabIndex = 32;
             this.mrcDatos.TabStop = false;
             this.mrcDatos.Text = "Datos";
             // 
@@ -185,49 +176,46 @@
             this.lblDireccion.TabIndex = 16;
             this.lblDireccion.Text = "Direccion";
             // 
-            // cmdGuardar
+            // cmdBuscar
             // 
-            this.cmdGuardar.Location = new System.Drawing.Point(195, 300);
-            this.cmdGuardar.Name = "cmdGuardar";
-            this.cmdGuardar.Size = new System.Drawing.Size(75, 23);
-            this.cmdGuardar.TabIndex = 14;
-            this.cmdGuardar.Text = "Guardar";
-            this.cmdGuardar.UseVisualStyleBackColor = true;
-            this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
+            this.cmdBuscar.Location = new System.Drawing.Point(141, 35);
+            this.cmdBuscar.Name = "cmdBuscar";
+            this.cmdBuscar.Size = new System.Drawing.Size(75, 23);
+            this.cmdBuscar.TabIndex = 31;
+            this.cmdBuscar.Text = "Buscar";
+            this.cmdBuscar.UseVisualStyleBackColor = true;
+            this.cmdBuscar.Click += new System.EventHandler(this.cmdBuscar_Click_1);
             // 
-            // SsModificarEntrenador
+            // txtCodigo
             // 
-            this.SsModificarEntrenador.Location = new System.Drawing.Point(0, 343);
-            this.SsModificarEntrenador.Name = "SsModificarEntrenador";
-            this.SsModificarEntrenador.Size = new System.Drawing.Size(343, 22);
-            this.SsModificarEntrenador.TabIndex = 15;
-            this.SsModificarEntrenador.Text = "statusStrip1";
+            this.txtCodigo.Location = new System.Drawing.Point(127, 9);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
+            this.txtCodigo.TabIndex = 30;
             // 
-            // cmdModificar
+            // lblCodigo
             // 
-            this.cmdModificar.Location = new System.Drawing.Point(60, 300);
-            this.cmdModificar.Name = "cmdModificar";
-            this.cmdModificar.Size = new System.Drawing.Size(75, 23);
-            this.cmdModificar.TabIndex = 16;
-            this.cmdModificar.Text = "Modificar";
-            this.cmdModificar.UseVisualStyleBackColor = true;
-            this.cmdModificar.Click += new System.EventHandler(this.cmdModificar_Click);
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Location = new System.Drawing.Point(12, 9);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(99, 13);
+            this.lblCodigo.TabIndex = 29;
+            this.lblCodigo.Text = "Ingrese un Codigo  ";
             // 
-            // FrmModificarEntrenador
+            // FrmEliminarEntrenador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(343, 365);
-            this.Controls.Add(this.cmdModificar);
-            this.Controls.Add(this.SsModificarEntrenador);
-            this.Controls.Add(this.cmdGuardar);
+            this.ClientSize = new System.Drawing.Size(297, 340);
             this.Controls.Add(this.mrcDatos);
             this.Controls.Add(this.cmdBuscar);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lblCodigo);
-            this.Name = "FrmModificarEntrenador";
-            this.Text = "Modificar Entrenador";
-            this.Load += new System.EventHandler(this.FrmModificarEntrenador_Load);
+            this.Controls.Add(this.SsElimarEntrenador);
+            this.Controls.Add(this.cmdEliminar);
+            this.Name = "FrmEliminarEntrenador";
+            this.Text = "Eliminar Entrenador ";
+            this.Load += new System.EventHandler(this.FrmEliminarEntrenador_Load);
             this.mrcDatos.ResumeLayout(false);
             this.mrcDatos.PerformLayout();
             this.ResumeLayout(false);
@@ -237,9 +225,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblCodigo;
-        private System.Windows.Forms.TextBox txtCodigo;
-        private System.Windows.Forms.Button cmdBuscar;
+        private System.Windows.Forms.Button cmdEliminar;
+        private System.Windows.Forms.StatusStrip SsElimarEntrenador;
         private System.Windows.Forms.GroupBox mrcDatos;
         private System.Windows.Forms.ComboBox lstDeporte;
         private System.Windows.Forms.TextBox txtProvincia;
@@ -251,8 +238,8 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Label lblDireccion;
-        private System.Windows.Forms.Button cmdGuardar;
-        private System.Windows.Forms.StatusStrip SsModificarEntrenador;
-        private System.Windows.Forms.Button cmdModificar;
+        private System.Windows.Forms.Button cmdBuscar;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.Label lblCodigo;
     }
 }

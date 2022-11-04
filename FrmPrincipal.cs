@@ -84,5 +84,16 @@ namespace PryArietti_Deportista_BD
             FrmModificarDeportista VentanaModificarDeportista = new FrmModificarDeportista();
             VentanaModificarDeportista.ShowDialog();
         }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void entrenadorToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            FrmEliminarEntrenador VentanaEliminarEntrenador = new FrmEliminarEntrenador();
+            VentanaEliminarEntrenador.ShowDialog();
+        }
     }
 }

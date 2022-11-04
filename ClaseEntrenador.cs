@@ -110,7 +110,7 @@ namespace PryArietti_Deportista_BD
             try
             {
                 // Poner comillas simples.. (Por eso no funcionaba)
-                string ModificarEntrenador = "UPDATE ENTRENADORES SET [DIRECCION] = '" + Direccion + "',[PROVINCIA] ='" + Provincia + "',[DEPORTE] ='" + Deporte + "' WHERE [CODIGO DEPORTISTA] = '" + CodigoDeportista + "'";
+                string ModificarEntrenador = "UPDATE ENTRENADORES SET [NOMBRE] = '" + Nombre + "',[Apellido] = '" + Apellido + "',[DIRECCION] = '" + Direccion + "',[PROVINCIA] ='" + Provincia + "',[DEPORTE] ='" + Deporte + "' WHERE [CODIGO DEPORTISTA] = '" + CodigoDeportista + "'";
                 //Conectarse a la base de datos
                 ConexionBD.ConnectionString = RutaBaseDeDatos;
                 ConexionBD.Open();
@@ -134,6 +134,33 @@ namespace PryArietti_Deportista_BD
             }
 
 
+        }
+
+        public void EliminarEntrenador(string CodigoDeportista)
+        {
+            try
+            {
+                String Eliminar = "DELETE FROM ENTRENADORES WHERE ('" + CodigoDeportista + "'= [CODIGO DEPORTISTA])";
+                //Conectarse a la base de datos
+                ConexionBD.ConnectionString = RutaBaseDeDatos;
+                ConexionBD.Open();
+                // toma la conexion
+                QueQuieroDeLaBase.Connection = ConexionBD;
+
+                // me trae la tabla del acces 
+                QueQuieroDeLaBase.CommandType = System.Data.CommandType.Text;
+                //Selecciona la tabla 
+                QueQuieroDeLaBase.CommandText = Eliminar;
+                // Ejecuta el comando 
+                QueQuieroDeLaBase.ExecuteNonQuery();
+                //cierra la base de datos
+                ConexionBD.Close();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
 

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.cmdGuardar = new System.Windows.Forms.Button();
-            this.cmdLimpiar = new System.Windows.Forms.Button();
             this.mrcDatos = new System.Windows.Forms.GroupBox();
             this.lstDeporte = new System.Windows.Forms.ComboBox();
             this.lblDeporte = new System.Windows.Forms.Label();
@@ -44,9 +43,10 @@
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.cmdBuscar = new System.Windows.Forms.Button();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txtCodigoDeportista = new System.Windows.Forms.TextBox();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.SsDeportista = new System.Windows.Forms.StatusStrip();
+            this.cmdModificar = new System.Windows.Forms.Button();
             this.mrcDatos.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,16 +59,6 @@
             this.cmdGuardar.Text = "Guardar";
             this.cmdGuardar.UseVisualStyleBackColor = true;
             this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
-            // 
-            // cmdLimpiar
-            // 
-            this.cmdLimpiar.Location = new System.Drawing.Point(28, 313);
-            this.cmdLimpiar.Name = "cmdLimpiar";
-            this.cmdLimpiar.Size = new System.Drawing.Size(75, 23);
-            this.cmdLimpiar.TabIndex = 20;
-            this.cmdLimpiar.Text = "Limpiar";
-            this.cmdLimpiar.UseVisualStyleBackColor = true;
-            this.cmdLimpiar.Click += new System.EventHandler(this.cmdLimpiar_Click);
             // 
             // mrcDatos
             // 
@@ -93,6 +83,7 @@
             // 
             // lstDeporte
             // 
+            this.lstDeporte.Enabled = false;
             this.lstDeporte.FormattingEnabled = true;
             this.lstDeporte.Items.AddRange(new object[] {
             "FUTBOL",
@@ -115,6 +106,7 @@
             // 
             // txtTelefono
             // 
+            this.txtTelefono.Enabled = false;
             this.txtTelefono.Location = new System.Drawing.Point(121, 123);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(100, 20);
@@ -122,6 +114,7 @@
             // 
             // txtEdad
             // 
+            this.txtEdad.Enabled = false;
             this.txtEdad.Location = new System.Drawing.Point(121, 154);
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(100, 20);
@@ -129,6 +122,7 @@
             // 
             // txtDireccion
             // 
+            this.txtDireccion.Enabled = false;
             this.txtDireccion.Location = new System.Drawing.Point(121, 92);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(100, 20);
@@ -136,6 +130,7 @@
             // 
             // txtApellido
             // 
+            this.txtApellido.Enabled = false;
             this.txtApellido.Location = new System.Drawing.Point(121, 61);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(100, 20);
@@ -143,6 +138,7 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(121, 30);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
@@ -203,12 +199,12 @@
             this.cmdBuscar.UseVisualStyleBackColor = true;
             this.cmdBuscar.Click += new System.EventHandler(this.cmdBuscar_Click);
             // 
-            // txtCodigo
+            // txtCodigoDeportista
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(139, 11);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
-            this.txtCodigo.TabIndex = 17;
+            this.txtCodigoDeportista.Location = new System.Drawing.Point(139, 11);
+            this.txtCodigoDeportista.Name = "txtCodigoDeportista";
+            this.txtCodigoDeportista.Size = new System.Drawing.Size(100, 20);
+            this.txtCodigoDeportista.TabIndex = 17;
             // 
             // lblCodigo
             // 
@@ -226,17 +222,27 @@
             this.SsDeportista.Size = new System.Drawing.Size(348, 22);
             this.SsDeportista.TabIndex = 22;
             // 
+            // cmdModificar
+            // 
+            this.cmdModificar.Location = new System.Drawing.Point(48, 313);
+            this.cmdModificar.Name = "cmdModificar";
+            this.cmdModificar.Size = new System.Drawing.Size(75, 23);
+            this.cmdModificar.TabIndex = 23;
+            this.cmdModificar.Text = "Modificar";
+            this.cmdModificar.UseVisualStyleBackColor = true;
+            this.cmdModificar.Click += new System.EventHandler(this.cmdModificar_Click);
+            // 
             // FrmModificarDeportista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(348, 361);
+            this.Controls.Add(this.cmdModificar);
             this.Controls.Add(this.SsDeportista);
             this.Controls.Add(this.cmdGuardar);
-            this.Controls.Add(this.cmdLimpiar);
             this.Controls.Add(this.mrcDatos);
             this.Controls.Add(this.cmdBuscar);
-            this.Controls.Add(this.txtCodigo);
+            this.Controls.Add(this.txtCodigoDeportista);
             this.Controls.Add(this.lblCodigo);
             this.Name = "FrmModificarDeportista";
             this.Text = "Modificar Deportista ";
@@ -250,7 +256,6 @@
 
         #endregion
         private System.Windows.Forms.Button cmdGuardar;
-        private System.Windows.Forms.Button cmdLimpiar;
         private System.Windows.Forms.GroupBox mrcDatos;
         private System.Windows.Forms.ComboBox lstDeporte;
         private System.Windows.Forms.Label lblDeporte;
@@ -265,8 +270,9 @@
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.Button cmdBuscar;
-        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.TextBox txtCodigoDeportista;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.StatusStrip SsDeportista;
+        private System.Windows.Forms.Button cmdModificar;
     }
 }

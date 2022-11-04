@@ -118,14 +118,14 @@
             // entrenadorToolStripMenuItem2
             // 
             this.entrenadorToolStripMenuItem2.Name = "entrenadorToolStripMenuItem2";
-            this.entrenadorToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.entrenadorToolStripMenuItem2.Size = new System.Drawing.Size(132, 22);
             this.entrenadorToolStripMenuItem2.Text = "Entrenador";
             this.entrenadorToolStripMenuItem2.Click += new System.EventHandler(this.entrenadorToolStripMenuItem2_Click);
             // 
             // deportistaToolStripMenuItem2
             // 
             this.deportistaToolStripMenuItem2.Name = "deportistaToolStripMenuItem2";
-            this.deportistaToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.deportistaToolStripMenuItem2.Size = new System.Drawing.Size(132, 22);
             this.deportistaToolStripMenuItem2.Text = "Deportista";
             this.deportistaToolStripMenuItem2.Click += new System.EventHandler(this.deportistaToolStripMenuItem2_Click);
             // 
@@ -137,17 +137,19 @@
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
             this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
             // entrenadorToolStripMenuItem3
             // 
             this.entrenadorToolStripMenuItem3.Name = "entrenadorToolStripMenuItem3";
-            this.entrenadorToolStripMenuItem3.Size = new System.Drawing.Size(132, 22);
+            this.entrenadorToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             this.entrenadorToolStripMenuItem3.Text = "Entrenador";
+            this.entrenadorToolStripMenuItem3.Click += new System.EventHandler(this.entrenadorToolStripMenuItem3_Click);
             // 
             // deportistaToolStripMenuItem3
             // 
             this.deportistaToolStripMenuItem3.Name = "deportistaToolStripMenuItem3";
-            this.deportistaToolStripMenuItem3.Size = new System.Drawing.Size(132, 22);
+            this.deportistaToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             this.deportistaToolStripMenuItem3.Text = "Deportista";
             // 
             // salirToolStripMenuItem

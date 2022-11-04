@@ -84,6 +84,11 @@
             // lstDeporte
             // 
             this.lstDeporte.FormattingEnabled = true;
+            this.lstDeporte.Items.AddRange(new object[] {
+            "Futbol",
+            "Voley",
+            "Ciclismo",
+            "Tenis"});
             this.lstDeporte.Location = new System.Drawing.Point(138, 216);
             this.lstDeporte.Name = "lstDeporte";
             this.lstDeporte.Size = new System.Drawing.Size(121, 21);

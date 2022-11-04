@@ -88,6 +88,19 @@ namespace PryArietti_Deportista_BD
 
             MessageBox.Show("Datos Modificados");
 
+            Limpiar();
+
+        }
+
+        private void cmdModificar_Click(object sender, EventArgs e)
+        {
+            txtNombre.Enabled = true;
+            txtApellido.Enabled = true;
+            txtDireccion.Enabled = true;
+            lstDeporte.Enabled = true;
+            txtProvincia.Enabled = true;
+
+            txtNombre.Focus();
         }
     }
 }
