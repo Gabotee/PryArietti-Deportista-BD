@@ -151,6 +151,7 @@
             this.deportistaToolStripMenuItem3.Name = "deportistaToolStripMenuItem3";
             this.deportistaToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             this.deportistaToolStripMenuItem3.Text = "Deportista";
+            this.deportistaToolStripMenuItem3.Click += new System.EventHandler(this.deportistaToolStripMenuItem3_Click);
             // 
             // salirToolStripMenuItem
             // 

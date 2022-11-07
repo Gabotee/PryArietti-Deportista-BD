@@ -38,7 +38,7 @@ namespace PryArietti_Deportista_BD
 
                 txtTelefono.Text = Deportista.Telefono;
                 txtEdad.Text = Deportista.Edad;
-                lstDeporte.SelectedItem = Deportista.Deporte;
+                lstDeporte.Text = Deportista.Deporte;
             }
 
             

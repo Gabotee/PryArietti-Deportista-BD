@@ -96,8 +96,8 @@ namespace PryArietti_Deportista_BD
                             Ape = Leer.GetString(2);
                             Dir = Leer.GetString(3);
                             tel = Leer.GetString(4);
-                            Ed = Leer.GetString(5);
-                            Dep = Leer.GetString(6);    
+                            Ed = Leer.GetInt32(5).ToString();
+                            Dep = Leer.GetString(6).ToString();    
                         }
                     }
                 }
@@ -164,6 +164,33 @@ namespace PryArietti_Deportista_BD
 
                 QueQuieroDeLaBase.ExecuteNonQuery();
 
+                ConexionBD.Close();
+            }
+            catch (Exception)
+            {
+
+                //throw;
+            }
+        }
+
+        public void EliminarDeportista(string CodigoDeportista)
+        {
+            try
+            {
+                String Eliminar = "DELETE FROM DEPORTISTA WHERE ('" + CodigoDeportista + "'= [CODIGO DEPORTISTA])";
+                //Conectarse a la base de datos
+                ConexionBD.ConnectionString = RutaBaseDeDatos;
+                ConexionBD.Open();
+                // toma la conexion
+                QueQuieroDeLaBase.Connection = ConexionBD;
+
+                // me trae la tabla del acces 
+                QueQuieroDeLaBase.CommandType = System.Data.CommandType.Text;
+                //Selecciona la tabla 
+                QueQuieroDeLaBase.CommandText = Eliminar;
+                // Ejecuta el comando 
+                QueQuieroDeLaBase.ExecuteNonQuery();
+                //cierra la base de datos
                 ConexionBD.Close();
             }
             catch (Exception)

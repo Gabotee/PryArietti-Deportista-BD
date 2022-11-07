@@ -1,6 +1,6 @@
 ﻿namespace PryArietti_Deportista_BD
 {
-    partial class FrmModificarDeportista
+    partial class FrmEliminarDeportista
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cmdGuardar = new System.Windows.Forms.Button();
             this.mrcDatos = new System.Windows.Forms.GroupBox();
-            this.lstDeporte = new System.Windows.Forms.ComboBox();
-            this.lblDeporte = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtEdad = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
@@ -43,22 +39,15 @@
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.cmdBuscar = new System.Windows.Forms.Button();
-            this.txtCodigoDeportista = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblCodigo = new System.Windows.Forms.Label();
-            this.SsDeportista = new System.Windows.Forms.StatusStrip();
-            this.cmdModificar = new System.Windows.Forms.Button();
+            this.SsEliminarDeportista = new System.Windows.Forms.StatusStrip();
+            this.cmdEliminar = new System.Windows.Forms.Button();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.lblDeporte = new System.Windows.Forms.Label();
+            this.lstDeporte = new System.Windows.Forms.ComboBox();
             this.mrcDatos.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // cmdGuardar
-            // 
-            this.cmdGuardar.Location = new System.Drawing.Point(203, 313);
-            this.cmdGuardar.Name = "cmdGuardar";
-            this.cmdGuardar.Size = new System.Drawing.Size(75, 23);
-            this.cmdGuardar.TabIndex = 21;
-            this.cmdGuardar.Text = "Guardar";
-            this.cmdGuardar.UseVisualStyleBackColor = true;
-            this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
             // 
             // mrcDatos
             // 
@@ -74,43 +63,13 @@
             this.mrcDatos.Controls.Add(this.lblNombre);
             this.mrcDatos.Controls.Add(this.lblApellido);
             this.mrcDatos.Controls.Add(this.lblDireccion);
-            this.mrcDatos.Location = new System.Drawing.Point(28, 76);
+            this.mrcDatos.Location = new System.Drawing.Point(16, 74);
             this.mrcDatos.Name = "mrcDatos";
-            this.mrcDatos.Size = new System.Drawing.Size(250, 231);
-            this.mrcDatos.TabIndex = 19;
+            this.mrcDatos.Size = new System.Drawing.Size(250, 222);
+            this.mrcDatos.TabIndex = 38;
             this.mrcDatos.TabStop = false;
             this.mrcDatos.Text = "Datos";
-            // 
-            // lstDeporte
-            // 
-            this.lstDeporte.Enabled = false;
-            this.lstDeporte.FormattingEnabled = true;
-            this.lstDeporte.Items.AddRange(new object[] {
-            "FUTBOL",
-            "VOLEY",
-            "CICLISMO",
-            "BASQUET"});
-            this.lstDeporte.Location = new System.Drawing.Point(121, 185);
-            this.lstDeporte.Name = "lstDeporte";
-            this.lstDeporte.Size = new System.Drawing.Size(100, 21);
-            this.lstDeporte.TabIndex = 23;
-            // 
-            // lblDeporte
-            // 
-            this.lblDeporte.AutoSize = true;
-            this.lblDeporte.Location = new System.Drawing.Point(9, 185);
-            this.lblDeporte.Name = "lblDeporte";
-            this.lblDeporte.Size = new System.Drawing.Size(45, 13);
-            this.lblDeporte.TabIndex = 24;
-            this.lblDeporte.Text = "Deporte";
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Enabled = false;
-            this.txtTelefono.Location = new System.Drawing.Point(121, 123);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefono.TabIndex = 23;
+            this.mrcDatos.Enter += new System.EventHandler(this.mrcDatos_Enter);
             // 
             // txtEdad
             // 
@@ -147,7 +106,7 @@
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(8, 125);
+            this.lblTelefono.Location = new System.Drawing.Point(8, 122);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(49, 13);
             this.lblTelefono.TabIndex = 18;
@@ -156,7 +115,7 @@
             // lblEdad
             // 
             this.lblEdad.AutoSize = true;
-            this.lblEdad.Location = new System.Drawing.Point(9, 154);
+            this.lblEdad.Location = new System.Drawing.Point(9, 153);
             this.lblEdad.Name = "lblEdad";
             this.lblEdad.Size = new System.Drawing.Size(32, 13);
             this.lblEdad.TabIndex = 17;
@@ -191,62 +150,88 @@
             // 
             // cmdBuscar
             // 
-            this.cmdBuscar.Location = new System.Drawing.Point(153, 37);
+            this.cmdBuscar.Location = new System.Drawing.Point(141, 35);
             this.cmdBuscar.Name = "cmdBuscar";
             this.cmdBuscar.Size = new System.Drawing.Size(75, 23);
-            this.cmdBuscar.TabIndex = 18;
+            this.cmdBuscar.TabIndex = 37;
             this.cmdBuscar.Text = "Buscar";
             this.cmdBuscar.UseVisualStyleBackColor = true;
             this.cmdBuscar.Click += new System.EventHandler(this.cmdBuscar_Click);
             // 
-            // txtCodigoDeportista
+            // txtCodigo
             // 
-            this.txtCodigoDeportista.Location = new System.Drawing.Point(139, 11);
-            this.txtCodigoDeportista.Name = "txtCodigoDeportista";
-            this.txtCodigoDeportista.Size = new System.Drawing.Size(100, 20);
-            this.txtCodigoDeportista.TabIndex = 17;
+            this.txtCodigo.Location = new System.Drawing.Point(127, 9);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
+            this.txtCodigo.TabIndex = 36;
             // 
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(24, 11);
+            this.lblCodigo.Location = new System.Drawing.Point(12, 9);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(99, 13);
-            this.lblCodigo.TabIndex = 16;
+            this.lblCodigo.TabIndex = 35;
             this.lblCodigo.Text = "Ingrese un Codigo  ";
             // 
-            // SsDeportista
+            // SsEliminarDeportista
             // 
-            this.SsDeportista.Location = new System.Drawing.Point(0, 346);
-            this.SsDeportista.Name = "SsDeportista";
-            this.SsDeportista.Size = new System.Drawing.Size(330, 22);
-            this.SsDeportista.TabIndex = 22;
+            this.SsEliminarDeportista.Location = new System.Drawing.Point(0, 326);
+            this.SsEliminarDeportista.Name = "SsEliminarDeportista";
+            this.SsEliminarDeportista.Size = new System.Drawing.Size(293, 22);
+            this.SsEliminarDeportista.TabIndex = 34;
+            this.SsEliminarDeportista.Text = "statusStrip1";
             // 
-            // cmdModificar
+            // cmdEliminar
             // 
-            this.cmdModificar.Location = new System.Drawing.Point(48, 313);
-            this.cmdModificar.Name = "cmdModificar";
-            this.cmdModificar.Size = new System.Drawing.Size(75, 23);
-            this.cmdModificar.TabIndex = 23;
-            this.cmdModificar.Text = "Modificar";
-            this.cmdModificar.UseVisualStyleBackColor = true;
-            this.cmdModificar.Click += new System.EventHandler(this.cmdModificar_Click);
+            this.cmdEliminar.Location = new System.Drawing.Point(191, 302);
+            this.cmdEliminar.Name = "cmdEliminar";
+            this.cmdEliminar.Size = new System.Drawing.Size(75, 21);
+            this.cmdEliminar.TabIndex = 33;
+            this.cmdEliminar.Text = "Eliminar";
+            this.cmdEliminar.UseVisualStyleBackColor = true;
+            this.cmdEliminar.Click += new System.EventHandler(this.cmdEliminar_Click);
             // 
-            // FrmModificarDeportista
+            // txtTelefono
+            // 
+            this.txtTelefono.Enabled = false;
+            this.txtTelefono.Location = new System.Drawing.Point(121, 123);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefono.TabIndex = 23;
+            // 
+            // lblDeporte
+            // 
+            this.lblDeporte.AutoSize = true;
+            this.lblDeporte.Location = new System.Drawing.Point(9, 184);
+            this.lblDeporte.Name = "lblDeporte";
+            this.lblDeporte.Size = new System.Drawing.Size(45, 13);
+            this.lblDeporte.TabIndex = 24;
+            this.lblDeporte.Text = "Deporte";
+            // 
+            // lstDeporte
+            // 
+            this.lstDeporte.Enabled = false;
+            this.lstDeporte.FormattingEnabled = true;
+            this.lstDeporte.Location = new System.Drawing.Point(121, 184);
+            this.lstDeporte.Name = "lstDeporte";
+            this.lstDeporte.Size = new System.Drawing.Size(100, 21);
+            this.lstDeporte.TabIndex = 39;
+            // 
+            // FrmEliminarDeportista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(330, 368);
-            this.Controls.Add(this.cmdModificar);
-            this.Controls.Add(this.SsDeportista);
-            this.Controls.Add(this.cmdGuardar);
+            this.ClientSize = new System.Drawing.Size(293, 348);
             this.Controls.Add(this.mrcDatos);
             this.Controls.Add(this.cmdBuscar);
-            this.Controls.Add(this.txtCodigoDeportista);
+            this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lblCodigo);
-            this.Name = "FrmModificarDeportista";
-            this.Text = "Modificar Deportista ";
-            this.Load += new System.EventHandler(this.FrmModificarDeportista_Load);
+            this.Controls.Add(this.SsEliminarDeportista);
+            this.Controls.Add(this.cmdEliminar);
+            this.Name = "FrmEliminarDeportista";
+            this.Text = "Eliminar Deportista";
+            this.Load += new System.EventHandler(this.FrmEliminarDeportista_Load);
             this.mrcDatos.ResumeLayout(false);
             this.mrcDatos.PerformLayout();
             this.ResumeLayout(false);
@@ -255,11 +240,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button cmdGuardar;
+
         private System.Windows.Forms.GroupBox mrcDatos;
-        private System.Windows.Forms.ComboBox lstDeporte;
-        private System.Windows.Forms.Label lblDeporte;
-        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.TextBox txtEdad;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtApellido;
@@ -270,9 +252,12 @@
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.Button cmdBuscar;
-        private System.Windows.Forms.TextBox txtCodigoDeportista;
+        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label lblCodigo;
-        private System.Windows.Forms.StatusStrip SsDeportista;
-        private System.Windows.Forms.Button cmdModificar;
+        private System.Windows.Forms.StatusStrip SsEliminarDeportista;
+        private System.Windows.Forms.Button cmdEliminar;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.Label lblDeporte;
+        private System.Windows.Forms.ComboBox lstDeporte;
     }
 }
